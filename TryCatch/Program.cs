@@ -6,19 +6,31 @@ namespace TryCatch
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello");
+            Console.WriteLine("Programa INVENCÍVEL");
 
             Run();
         }
 
-
         private static void Run()
         {
-            Console.Write("Insira um número");
+            Console.Write("Insira um número: ");
 
-            int i = Convert.ToInt32(Console.ReadLine());
+            try
+            {
+                int i = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine($"Numero inserido: {i}");
+                Console.WriteLine($"Numero inserido: {i}");
+            }
+
+            catch (OverflowException)
+            {
+                Console.WriteLine($"Error: Number too large...");
+            }
+
+            catch (Exception e)
+            {
+                Console.WriteLine($"Error: {e.Message}");
+            }
         }
     }
 }
