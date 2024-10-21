@@ -31,6 +31,8 @@ namespace TryCatch
             {
                 Console.WriteLine($"Error: {e.Message}");
             }
+
+            finally { Console.WriteLine("\nThank you"); }
         }
     }
 }
